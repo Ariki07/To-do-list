@@ -1,3 +1,4 @@
+// STORING ALL REQUIERD ELEMENTS 
 const taskInput = document.querySelector(".task-input input");
 const filters = document.querySelectorAll(".filters span");
 const clearAll = document.querySelector(".clear-btn");
@@ -6,8 +7,11 @@ const taskBox = document.querySelector(".task-box");
 
 let editId;
 let isEditTask = false;
+
+// ARRAY TO STORE TODO ITEMS IN LOCAL STORAGE 
 let todos = JSON.parse(localStorage.getItem("todo-list"));
 
+// INPUT BOX IS ACTIVATED 
 taskInput.onkeyup = ()=>{
     let userEnteredValue = taskInput.value;
     if(userEnteredValue.trim() != 0){
@@ -17,7 +21,7 @@ taskInput.onkeyup = ()=>{
     }
   }
 
-
+// FILTER OPTION RESULTS 
 filters.forEach (btn => {
     btn.addEventListener("click", () => {
         document.querySelector("span.active").classList.remove("active");
@@ -26,6 +30,7 @@ filters.forEach (btn => {
     });
 });
 
+// FUNCTION TO SHOW TASKS BASED ON FILTERS
 function showTodo(filter) {
     let liTag = "";
     if(todos) {
@@ -66,6 +71,7 @@ function showMenu(selectedTask) {
     });
 }
 
+// FUNCTION FOR UPDATING STATUS 
 function updateStatus(selectedTask) {
     let taskName = selectedTask.parentElement.lastElementChild;
     if(selectedTask.checked) {
@@ -78,6 +84,7 @@ function updateStatus(selectedTask) {
     localStorage.setItem("todo-list", JSON.stringify(todos))
 }
 
+// FUNCTION FOR EDITING TASKS 
 function editTask(taskId, textName) {
     editId = taskId;
     isEditTask = true;
@@ -86,6 +93,7 @@ function editTask(taskId, textName) {
     taskInput.classList.add("active");
 }
 
+// FUNCTION FOR DELETING TASKS 
 function deleteTask(deleteId, filter) {
     const pendingTasksNumb = document.querySelector(".pendingTasks");
     pendingTasksNumb.textContent = (todos.length)-1;
@@ -95,6 +103,7 @@ function deleteTask(deleteId, filter) {
     showTodo(filter);
 }
 
+// WHEN CLICKED CLEAR ALL BUTTON
 clearAll.addEventListener("click", () => {
     todos = [];
     const pendingTasksNumb = document.querySelector(".pendingTasks");
@@ -105,7 +114,7 @@ clearAll.addEventListener("click", () => {
     showTodo()
 });
 
-
+// FUNCTION TO ADD ANY TASK INTO STORAGE
 function addTodolist (){
     document.getElementById("taskno").style.visibility = "visible";
     let userTask = taskInput.value.trim();
@@ -127,5 +136,10 @@ function addTodolist (){
 
   }
 
+//   TAKING INPUTS (2 WAYS)
+
+// WHEN ENTER IS CLICKED 
 taskInput.addEventListener("keyup", e => {if(e.key == "Enter"){ addTodolist ()}});
+
+// WHEN ADD BUTTON IS CLICKED 
 addBtn.onclick = () => addTodolist();
