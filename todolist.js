@@ -137,7 +137,7 @@ function addTodolist (){
     taskInput.focus();
   }
 
-//   TAKING INPUTS (2 WAYS)
+//   TAKING INPUTS (2 Ways)
 
 // WHEN ENTER IS CLICKED 
 taskInput.addEventListener("keyup", e => {if(e.key == "Enter"){ addTodolist ()}});
