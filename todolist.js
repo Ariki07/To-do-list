@@ -61,6 +61,7 @@ function showTodo(filter) {
 }
 showTodo("all");
 
+// FUNCTION TO SHOW EDIT/DELETE MENU FOR EACH TASK
 function showMenu(selectedTask) {
     let menuDiv = selectedTask.parentElement.lastElementChild;
     menuDiv.classList.add("show");
@@ -133,7 +134,7 @@ function addTodolist (){
         pendingTasksNumb.textContent = todos.length;
         showTodo(document.querySelector("span.active").id);
     }
-
+    taskInput.focus();
   }
 
 //   TAKING INPUTS (2 WAYS)
