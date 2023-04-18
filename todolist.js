@@ -11,7 +11,7 @@ let isEditTask = false;
 // ARRAY TO STORE TODO ITEMS IN LOCAL STORAGE 
 let todos = JSON.parse(localStorage.getItem("todo-list"));
 
-// INPUT BOX IS ACTIVATED 
+// INPUT BOX FUNCTION
 taskInput.onkeyup = ()=>{
     let userEnteredValue = taskInput.value;
     if(userEnteredValue.trim() != 0){
