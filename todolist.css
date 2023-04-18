@@ -45,7 +45,7 @@ body{
 /* INPUT BOX PROPERTIES  */
 .task-input{
   height: 50px;
-  padding: 0 65px;
+  padding: 0 25px;
   position: relative;
 }
 .task-input img{
@@ -61,7 +61,7 @@ body{
   font-size: 18px;
   color: #454547;
   border-radius: 5px;
-  padding: 0 20px 0 53px;
+  padding: 0 40px 0 53px;
   border: 1px solid #999;
   background: #c8c9d4;
 }
@@ -192,7 +192,7 @@ body{
 .task label p{
   user-select: none;
   margin-left: 12px;
-  word-wrap:normal;
+  word-break:break-all;
 }
 .task label p.checked{
   text-decoration: line-through;
