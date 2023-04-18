@@ -45,7 +45,7 @@ body{
 /* INPUT BOX PROPERTIES  */
 .task-input{
   height: 50px;
-  padding: 0 25px;
+  padding: 0 65px;
   position: relative;
 }
 .task-input img{
@@ -192,7 +192,7 @@ body{
 .task label p{
   user-select: none;
   margin-left: 12px;
-  word-break: break-all;
+  word-wrap:normal;
 }
 .task label p.checked{
   text-decoration: line-through;
