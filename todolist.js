@@ -1,4 +1,4 @@
-// STORING ALL REQUIERD ELEMENTS 
+// STORING ALL REQUIRED ELEMENTS 
 const taskInput = document.querySelector(".task-input input");
 const filters = document.querySelectorAll(".filters span");
 const clearAll = document.querySelector(".clear-btn");
